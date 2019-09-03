@@ -57,3 +57,21 @@ li::before {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+.tablero{
+  width: 600px;
+  height: 600px;
+  background-color: red;
+}
+
+.piezas{
+  width:33%;
+  float: left;
+}
+.piezas img{
+  width: 100%;
+}
+
+#objetivo img{
+  width: 150px;
+}
