@@ -1,52 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>BMO Arcadetest</title>
-    <link rel="stylesheet" href="css/juego.css">
-  </head>
-  <body>
-    <div class="col-40">
-    
-      <div id="titulo">
-      </div>
-      <div id="instrucciones">
-        <ul id="lista-instrucciones">
-        </ul>
-      </div>
-      <div id="objetivo">
-          <img src="images\final.png" alt="Resultado Final">
-        <div class="texto-centrado">
-          
-          
-        </div>
-      </div>
-      <div id="ultimo-mov">
-        <div id="flecha" class="texto-centrado">
-          
-        </div>
-      </div>
-      
-    </div>
-    <div class="col-60">
-      <div id="juego">
-        <div class="tablero">
-          <div class="piezas" id="pieza1"><img src="images\1.jpg" alt="Imagen 1"></div>
-          <div class="piezas" id="pieza2"><img src="images\2.jpg" alt="Imagen 2"></div>
-          <div class="piezas" id="pieza3"><img src="images\3.jpg" alt="Imagen 3"></div>
-          <div class="piezas" id="pieza4"><img src="images\4.jpg" alt="Imagen 4"></div>
-          <div class="piezas" id="pieza5"><img src="images\5.jpg" alt="Imagen 5"></div>
-          <div class="piezas" id="pieza6"><img src="images\6.jpg" alt="Imagen 6"></div>
-          <div class="piezas" id="pieza7"><img src="images\7.jpg" alt="Imagen 7"></div>
-          <div class="piezas" id="pieza8"><img src="images\8.jpg" alt="Imagen 8"></div>
-          <div class="piezas" id="pieza9"></div>
 
-        </div>
+<head>
+  <meta charset="utf-8">
+  <title>BMO Arcadetest</title>
+  <link rel="stylesheet" href="css/juego.css">
+</head>
+
+<body>
+  <div class="col-40">
+
+    <div id="titulo">
+      PUZZLE
+    </div>
+    <div id="instrucciones">
+      <h1>Instrucciones</h1>
+      <ul id="lista-instrucciones">
+      </ul>
+    </div>
+    <div id="objetivo">
+      <h1 class="texto-centrado">Objetivo</h1>
+
+      <div class="texto-centrado">
+        <img id="imgFinal" src="images\finalPicachu.png" alt="Resultado Final">
+
       </div>
     </div>
-    <div id="footer">
-      
+    <div id="ultimo-mov">
+      <h1 class="texto-centrado">Último Movimiento </h1>
+      <div id="flecha" class="texto-centrado">
+
+      </div>
     </div>
-    <script src="js/juego.js"></script>
-  </body>
+    <div class="clear"></div>
+    <div id="rompecabezas">
+      <h1>Elije el rompecabezas </h1>
+      <ul>
+        <li>
+          <img id="pRobot" src="images\finalRobot.png" alt="">
+        </li>
+        <li>
+          <img id="pPicachu" src="images\finalPicachu.png" alt="">
+        </li>
+      </ul>
+
+
+    </div>
+
+  </div>
+  <div class="col-60">
+    <div id="juego">
+      <div class="tablero">
+        <div class="piezas" id="pieza1"><img id="img1" src="images\1.jpg" alt="Imagen 1"></div>
+        <div class="piezas" id="pieza2"><img id="img2" src="images\2.jpg" alt="Imagen 2"></div>
+        <div class="piezas" id="pieza3"><img id="img3" src="images\3.jpg" alt="Imagen 3"></div>
+        <div class="piezas" id="pieza4"><img id="img4" src="images\4.jpg" alt="Imagen 4"></div>
+        <div class="piezas" id="pieza5"><img id="img5" src="images\5.jpg" alt="Imagen 5"></div>
+        <div class="piezas" id="pieza6"><img id="img6" src="images\6.jpg" alt="Imagen 6"></div>
+        <div class="piezas" id="pieza7"><img id="img7" src="images\7.jpg" alt="Imagen 7"></div>
+        <div class="piezas" id="pieza8"><img id="img8" src="images\8.jpg" alt="Imagen 8"></div>
+        <div class="piezas" id="pieza9"></div>
+
+      </div>
+    </div>
+  </div>
+  <div id="footer" class="texto-centrado">
+    Puzzle creado por Sergio Ojeda.
+  </div>
+  <script src="js/juego.js"></script>
+</body>
+
 </html>

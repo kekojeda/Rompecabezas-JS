@@ -1,7 +1,36 @@
 // Arreglo que contiene las intrucciones del juego 
-var instrucciones = ["Instruccion 1", "Instruccion 2", "Instruccion 3", "Instruccion 4", "Instruccion 5", "Instruccion 6"];
+var instrucciones = ["Utilizar las flechas para mover las piezas.", "Mover las piezas hasta lograr completar la imagen. Puede guiarse con la imagen objetivo."];
 // Arreglo para ir guardando los movimientos que se vayan realizando
 var movimientos = [];
+//arreglo q guarda los dos puzzles
+var puzzlePicachu = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg","images/6.jpg","images/7.jpg","images/8.jpg"]
+var puzzleRobot = ["images/10.jpg","images/20.jpg","images/30.jpg","images/40.jpg","images/50.jpg","images/60.jpg","images/70.jpg","images/80.jpg",]
+
+var cambioPicachu = document.getElementById("pPicachu");
+var cambioRobot = document.getElementById("pRobot");
+var objetivo = document.getElementById("imgFinal");
+
+cambioPicachu.addEventListener("click",function(){changePuzzle(puzzlePicachu)});
+cambioRobot.addEventListener("click",function(){changePuzzle(puzzleRobot)});
+
+
+function changePuzzle(puzzle){
+  for(var i=0; i<puzzle.length; i++){
+    let contador = i + 1;
+    //console.log(puzzle[i]);
+    //console.log("img"+contador);
+    document.getElementById("img"+contador).src = puzzle[i];
+  }
+  
+  if(objetivo.src.includes("Picachu")){
+    objetivo.src = "images/finalRobot.png";
+    console.log("se cambiar a robot");
+  }else if(objetivo.src.includes("Robot")){
+    objetivo.src = "images/finalPicachu.png";
+    console.log("se cambiar a picachu");
+  }
+}
+
 
 // Representación de la grilla. Cada número representa a una pieza.
 // El 9 es la posición vacía
@@ -23,7 +52,7 @@ Podés ver su implementación en la ultima parte de este codigo. */
 function mostrarInstrucciones(instrucciones) {
   for (i = 0; i < instrucciones.length; i++) {
     mostrarInstruccionEnLista(instrucciones[i], 'lista-instrucciones');
-}
+  }
 }
 
 
@@ -63,8 +92,8 @@ function chequearSiGano() {
 
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
 function mostrarCartelGanador() {
-  if(chequearSiGano()){
-    alert("GANASTEEEEEEEEEEEEEEEEEEEEEEE!")
+  if (chequearSiGano()) {
+    alert("¡Felicitaciones! Ganaste el juego! \n Terminaste el juego en un total de " + movimientos.length + " movimientos    ")
   }
 }
 
@@ -79,14 +108,11 @@ En vez de intercambiar esos valores vamos a terminar teniendo en ambas posicione
 Se te ocurre cómo solucionar esto con una variable temporal?
 */
 function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPos2) {
-  //COMPLETAR
-  
-  var temp1 =  grilla[filaPos1][columnaPos1];
-  var temp2=  grilla[filaPos2][columnaPos2];
+  var temp1 = grilla[filaPos1][columnaPos1];
+  var temp2 = grilla[filaPos2][columnaPos2];
 
   grilla[filaPos1][columnaPos1] = temp2;
   grilla[filaPos2][columnaPos2] = temp1;
-
 
 }
 
@@ -100,9 +126,9 @@ function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
 
 // Para chequear si la posicón está dentro de la grilla.
 function posicionValida(fila, columna) {
-  if(fila>=0 && fila <=2 && columna >=0 && columna <=2){
+  if (fila >= 0 && fila <= 2 && columna >= 0 && columna <= 2) {
     return true;
-  }else {
+  } else {
     return false;
   }
 }
@@ -127,13 +153,13 @@ function moverEnDireccion(direccion) {
 
   // Mueve pieza hacia la derecha, reemplazandola con la blanca
   else if (direccion === codigosDireccion.DERECHA) {
-    nuevaColumnaPiezaVacia = columnaVacia + 1;
+    nuevaColumnaPiezaVacia = columnaVacia - 1;
     nuevaFilaPiezaVacia = filaVacia;
   }
 
   // Mueve pieza hacia la izquierda, reemplazandola con la blanca
   else if (direccion === codigosDireccion.IZQUIERDA) {
-    nuevaColumnaPiezaVacia = columnaVacia - 1;
+    nuevaColumnaPiezaVacia = columnaVacia + 1;
     nuevaFilaPiezaVacia = filaVacia;
   }
 
@@ -144,8 +170,6 @@ function moverEnDireccion(direccion) {
   if (posicionValida(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia)) {
     intercambiarPosiciones(filaVacia, columnaVacia, nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
     actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
-
-    //COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
     agregarMovimiento(direccion);
 
   }

@@ -1,10 +1,10 @@
 /*Código armado por La Foca Loca S.A. No modificar*/
 body {
   font-family: Arial, sans-serif;
-  width: 940px;
+  width: 1100px;
   margin: 5% auto;
   min-height: 100%;
-  background-image: url(../images/adventure.jpg);
+  background-image: url(../images/background.jpg);
 }
 ul {
   padding-left: 0;
@@ -31,7 +31,7 @@ li::before {
 }
 .col-40 {
   background: #FFF;
-  padding: 30px;
+  padding: 25px;
   color: #000;
 }
 
@@ -41,7 +41,7 @@ li::before {
 }
 
 #flecha{
-  font-size: 60px;
+  font-size: 100px;
 }
 
 .texto-centrado {
@@ -65,13 +65,68 @@ li::before {
 }
 
 .piezas{
-  width:33%;
+  width:33.3%;
+  height: 33.3%;
   float: left;
 }
 .piezas img{
   width: 100%;
+  border: 1px solid black;
 }
 
 #objetivo img{
   width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+#titulo{
+  font-size: 20px;
+  color:white ;
+  background-color: #E84A5F;
+  padding: 5px;
+  letter-spacing: 7px;
+  text-align: center;
+  
+
+}
+
+#objetivo{
+  width: 50%;
+  float:left;
+}
+
+#ultimo-mov{
+  width: 50%;
+  float:left;
+}
+.clear{
+  clear: both;
+}
+
+#rompecabezas{
+  margin-top: 15px;
+  text-align: center;
+}
+
+#rompecabezas li{
+  display: inline-block;
+  
+}
+
+#rompecabezas ul{
+list-style: none;
+}
+
+img#pPicachu, img#pRobot{
+  width: 80px;
+}
+
+#footer {
+  background-color: black;
+  padding: 10 px;
+  font-size: 12px;
+  color: #FFF;
+
 }
